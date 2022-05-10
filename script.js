@@ -15,6 +15,16 @@ function validaCPF(cpf) {
             soma += numeros.charAt(10 - i) * i;
         }
         console.log(soma);
+
+        // abaixo, operador cond. ternario. 1. executa a operacao, pergunta se é menor que 2
+        //  se for vira 0 e vai pro resultado, se nao vai pro 11 - soma % 11.
+        var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+
+        // Validacao do primeiro digito
+        if(resultado != digitos.charAt(0)) {
+            return false
+        }
+        
         return true;
     }
 
